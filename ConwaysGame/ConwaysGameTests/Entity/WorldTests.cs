@@ -14,6 +14,16 @@ namespace ConwaysGame.Components.Tests
             Assert.AreEqual(10, newWorld.Height);
         }
 
+        [TestMethod()]
+        public void 世界充满细胞()
+        {
+            World newWorld = new World(10, 10);
+            Assert.IsNotNull(newWorld.GetCell(0, 0));
+            Assert.IsInstanceOfType(newWorld.GetCell(0, 0), typeof(Cell));
+            Assert.IsInstanceOfType(newWorld.GetCell(9, 9), typeof(Cell));
+
+        }
+
 
     }
 }
