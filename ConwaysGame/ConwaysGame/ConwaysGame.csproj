@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\CellGroup.cs" />
+    <Compile Include="Components\Rule.cs" />
     <Compile Include="Entity\Cell.cs" />
     <Compile Include="Components\CellStatus.cs" />
     <Compile Include="Entity\World.cs" />
