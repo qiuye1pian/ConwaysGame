@@ -34,6 +34,26 @@ namespace ConwaysGame.Components.Tests
             Assert.AreEqual(CellStatus.Dead, newCell.Status);
         }
 
-        
+        [TestMethod()]
+        public void 规则测试_活细胞周围2个活细胞_则活()
+        {
+            //Given
+            CellGroup cellGroup = new CellGroup()
+            {
+                TopLeft = Cell.CreateDead(),
+                Top = Cell.CreateAlive(),
+                TopRight = Cell.CreateDead(),
+                Left = Cell.CreateDead(),
+                Center = Cell.CreateAlive(),
+                Right = Cell.CreateDead(),
+                BottomLeft = Cell.CreateDead(),
+                Bottom = Cell.CreateAlive(),
+                BottomRight = Cell.CreateDead()
+            };
+            //When
+            Cell newCell = Rule.Evolution(cellGroup);
+            //Then
+            Assert.AreEqual(CellStatus.Alive, newCell.Status);
+        }
     }
 }

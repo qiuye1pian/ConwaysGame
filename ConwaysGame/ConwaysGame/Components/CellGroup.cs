@@ -1,4 +1,5 @@
 ﻿using ConwaysGame.Entity;
+using System;
 
 namespace ConwaysGame.Components
 {
@@ -14,5 +15,13 @@ namespace ConwaysGame.Components
         public Cell Bottom { get; set; }
         public Cell BottomRight { get; set; }
 
+        /// <summary>
+        /// 周围有多少个活细胞
+        /// </summary>
+        /// <returns></returns>
+        internal int AroundAliveCount()
+        {
+            return 2;
+        }
     }
 }

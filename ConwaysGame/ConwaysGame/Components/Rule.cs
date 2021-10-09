@@ -11,7 +11,17 @@ namespace ConwaysGame.Components
     {
         public static Cell Evolution(CellGroup cellGroup)
         {
-            return Cell.CreateDead();
+            Cell currentCell = cellGroup.Center;
+            if(CellStatus.Alive == currentCell.Status && cellGroup.AroundAliveCount()==2)
+            {
+                return Cell.CreateAlive();
+            }
+            if (CellStatus.Dead == currentCell.Status && cellGroup.AroundAliveCount() == 2)
+            {
+                return Cell.CreateDead();
+            }
+
+            return null;
         }
     }
 }
