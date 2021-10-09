@@ -56,6 +56,8 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Entity\World.cs" />
+    <Compile Include="Entity\WorldTests.cs" />
     <Compile Include="Entity\CellTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
