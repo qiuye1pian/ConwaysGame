@@ -1,9 +1,6 @@
-﻿using ConwaysGame.Entity;
-using System;
-
-namespace ConwaysGame.Components.Tests
+﻿namespace ConwaysGame.Entity
 {
-    internal class World
+    public class World
     {
         private readonly int width;
         private readonly int height;

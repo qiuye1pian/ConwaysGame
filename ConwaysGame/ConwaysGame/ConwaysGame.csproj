@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Entity\Cell.cs" />
     <Compile Include="Components\CellStatus.cs" />
+    <Compile Include="Entity\World.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
