@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ConwaysGame.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConwaysGame.Components.Tests
 {
@@ -12,9 +6,17 @@ namespace ConwaysGame.Components.Tests
     public class CellTests
     {
         [TestMethod()]
-        public void CellTest()
+        public void 创建活细胞()
         {
-            Assert.Fail();
+            Cell aliveCell = Cell.CreateAlive();
+            Assert.AreEqual(CellStatus.Alive, aliveCell.Status);
+        }
+
+        [TestMethod()]
+        public void 创建死细胞()
+        {
+            Cell aliveCell = Cell.CreateDead();
+            Assert.AreEqual(CellStatus.Dead, aliveCell.Status);
         }
     }
 }
