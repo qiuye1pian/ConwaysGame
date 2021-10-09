@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ConwaysGame.Entity;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ConwaysGame.Components.Tests
 {

@@ -1,4 +1,6 @@
-﻿namespace ConwaysGame.Components
+﻿using ConwaysGame.Components;
+
+namespace ConwaysGame.Entity
 {
     public class Cell
     {
