@@ -21,9 +21,8 @@ namespace ConwaysGame.Components.Tests
             Assert.IsNotNull(newWorld.GetCell(0, 0));
             Assert.IsInstanceOfType(newWorld.GetCell(0, 0), typeof(Cell));
             Assert.IsInstanceOfType(newWorld.GetCell(9, 9), typeof(Cell));
-
         }
 
-
+        
     }
 }

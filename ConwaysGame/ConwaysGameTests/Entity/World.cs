@@ -18,10 +18,9 @@ namespace ConwaysGame.Components.Tests
             {
                 for (int y = 0; y < height; y++)
                 {
-                    cells[x, y] = Cell.CreateAlive();
+                    cells[x, y] = Cell.RandomlyGenerate();
                 }
             }
-
         }
 
         public int Width { get => width; }

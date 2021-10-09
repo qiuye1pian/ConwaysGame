@@ -19,5 +19,15 @@ namespace ConwaysGame.Components.Tests
             Cell aliveCell = Cell.CreateDead();
             Assert.AreEqual(CellStatus.Dead, aliveCell.Status);
         }
+
+        [TestMethod()]
+        public void 随机创建细胞()
+        {
+            Cell randomCell = Cell.RandomlyGenerate();
+            Assert.IsNotNull(randomCell);
+
+        }
+
+        
     }
 }

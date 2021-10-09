@@ -1,4 +1,5 @@
 ﻿using ConwaysGame.Components;
+using System;
 
 namespace ConwaysGame.Entity
 {
@@ -19,6 +20,11 @@ namespace ConwaysGame.Entity
         public static Cell CreateDead()
         {
             return new Cell(CellStatus.Dead);
+        }
+
+        public static Cell RandomlyGenerate()
+        {
+            return new Random().Next(0, 9) % 2 == 0 ? CreateAlive() : CreateDead();
         }
     }
 }
