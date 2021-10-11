@@ -30,7 +30,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateDead()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
 
             //Then
             Assert.AreEqual(CellStatus.Dead, newCell.Status);
@@ -53,7 +53,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateDead()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
 
             //Then
             Assert.AreEqual(CellStatus.Dead, newCell.Status);
@@ -76,7 +76,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateDead()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
             //Then
             Assert.AreEqual(CellStatus.Alive, newCell.Status);
         }
@@ -99,7 +99,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateDead()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
             //Then
             Assert.AreEqual(CellStatus.Alive, newCell.Status);
         }
@@ -121,7 +121,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateDead()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
 
             //Then
             Assert.AreEqual(CellStatus.Dead, newCell.Status);
@@ -144,7 +144,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateDead()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
 
             //Then
             Assert.AreEqual(CellStatus.Dead, newCell.Status);
@@ -167,7 +167,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateDead()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
 
             //Then
             Assert.AreEqual(CellStatus.Dead, newCell.Status);
@@ -190,7 +190,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateDead()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
             //Then
             Assert.AreEqual(CellStatus.Dead, newCell.Status);
         }
@@ -212,7 +212,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateDead()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
             //Then
             Assert.AreEqual(CellStatus.Alive, newCell.Status);
         }
@@ -234,7 +234,7 @@ namespace ConwaysGame.Components.Tests
                 BottomRight = Cell.CreateAlive()
             };
             //When
-            Cell newCell = Rule.Evolution(cellGroup);
+            Cell newCell = Rule.Generate(cellGroup);
             //Then
             Assert.AreEqual(CellStatus.Dead, newCell.Status);
         }

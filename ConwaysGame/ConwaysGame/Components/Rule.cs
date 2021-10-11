@@ -9,7 +9,12 @@ namespace ConwaysGame.Components
 {
     public class Rule
     {
-        public static Cell Evolution(CellGroup cellGroup)
+        private Rule()
+        {
+
+        }
+
+        public static Cell Generate(CellGroup cellGroup)
         {
             Cell currentCell = cellGroup.Center;
 
@@ -39,6 +44,7 @@ namespace ConwaysGame.Components
             {
                 return Cell.CreateDead();
             }
+
             if (cellGroup.AroundAliveCount() <= 1)
             {
                 return Cell.CreateDead();

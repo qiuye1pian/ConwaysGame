@@ -27,5 +27,10 @@
         {
             return cells[x, y];
         }
+
+        public void Evolution()
+        {
+
+        }
     }
 }
