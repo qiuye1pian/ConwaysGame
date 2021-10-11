@@ -24,11 +24,11 @@ namespace ConwaysGame.Components
 
         private static Cell Pickup(Cell[,] cells, int x, int y)
         {
-            if (x < 0 || x > cells.GetLength(0))
+            if (x < 0 || x > cells.GetLength(0) - 1)
             {
                 return null;
             }
-            if (y < 0 || y > cells.GetLength(1))
+            if (y < 0 || y > cells.GetLength(1) - 1)
             {
                 return null;
             }
