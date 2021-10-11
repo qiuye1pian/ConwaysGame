@@ -12,15 +12,47 @@ namespace ConwaysGame.Components
         public static Cell Evolution(CellGroup cellGroup)
         {
             Cell currentCell = cellGroup.Center;
-            if(CellStatus.Alive == currentCell.Status && cellGroup.AroundAliveCount()==2)
+
+            switch (currentCell.Status)
             {
-                return Cell.CreateAlive();
+                case CellStatus.Alive:
+                    return DealAliveCell(cellGroup);
+                case CellStatus.Dead:
+                    return DealDeadCell(cellGroup);
             }
-            if (CellStatus.Dead == currentCell.Status && cellGroup.AroundAliveCount() == 2)
+            return null;
+        }
+
+        private static Cell DealDeadCell(CellGroup cellGroup)
+        {
+            if (cellGroup.AroundAliveCount() == 2)
             {
                 return Cell.CreateDead();
             }
 
+            if (cellGroup.AroundAliveCount() == 3)
+            {
+                return Cell.CreateDead();
+            }
+            return null;
+        }
+
+        private static Cell DealAliveCell(CellGroup cellGroup)
+        {
+            if (cellGroup.AroundAliveCount() == 4)
+            {
+                return Cell.CreateDead();
+            }
+
+            if (cellGroup.AroundAliveCount() == 2)
+            {
+                return Cell.CreateAlive();
+            }
+
+            if (cellGroup.AroundAliveCount() == 1)
+            {
+                return Cell.CreateDead();
+            }
             return null;
         }
     }

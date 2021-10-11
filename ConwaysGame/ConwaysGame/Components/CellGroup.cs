@@ -1,5 +1,6 @@
 ﻿using ConwaysGame.Entity;
-using System;
+using System.Linq;
+using System.Reflection;
 
 namespace ConwaysGame.Components
 {
@@ -21,7 +22,12 @@ namespace ConwaysGame.Components
         /// <returns></returns>
         internal int AroundAliveCount()
         {
-            return 2;
+            return (from property in GetType().GetRuntimeProperties()
+                    where property.PropertyType == typeof(Cell)
+                    && (property.Name != "Center") 
+                    && (property.GetValue(this) as Cell) != null
+                    && (property.GetValue(this) as Cell).Status == CellStatus.Alive
+                    select property).Count();
         }
     }
 }
