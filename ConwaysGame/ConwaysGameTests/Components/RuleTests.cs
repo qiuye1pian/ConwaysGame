@@ -14,6 +14,29 @@ namespace ConwaysGame.Components.Tests
     {
 
         [TestMethod()]
+        public void 规则测试_活细胞周围0个活细胞_则死()
+        {
+            //Given
+            CellGroup cellGroup = new CellGroup()
+            {
+                TopLeft = Cell.CreateDead(),
+                Top = Cell.CreateDead(),
+                TopRight = Cell.CreateDead(),
+                Left = Cell.CreateDead(),
+                Center = Cell.CreateAlive(),
+                Right = Cell.CreateDead(),
+                BottomLeft = Cell.CreateDead(),
+                Bottom = Cell.CreateDead(),
+                BottomRight = Cell.CreateDead()
+            };
+            //When
+            Cell newCell = Rule.Evolution(cellGroup);
+
+            //Then
+            Assert.AreEqual(CellStatus.Dead, newCell.Status);
+        }
+
+        [TestMethod()]
         public void 规则测试_活细胞周围1个活细胞_则死()
         {
             //Given
@@ -57,7 +80,29 @@ namespace ConwaysGame.Components.Tests
             //Then
             Assert.AreEqual(CellStatus.Alive, newCell.Status);
         }
+        
 
+        [TestMethod()]
+        public void 规则测试_活细胞周围3个活细胞_则活()
+        {
+            //Given
+            CellGroup cellGroup = new CellGroup()
+            {
+                TopLeft = Cell.CreateDead(),
+                Top = Cell.CreateAlive(),
+                TopRight = Cell.CreateDead(),
+                Left = Cell.CreateDead(),
+                Center = Cell.CreateAlive(),
+                Right = Cell.CreateAlive(),
+                BottomLeft = Cell.CreateDead(),
+                Bottom = Cell.CreateAlive(),
+                BottomRight = Cell.CreateDead()
+            };
+            //When
+            Cell newCell = Rule.Evolution(cellGroup);
+            //Then
+            Assert.AreEqual(CellStatus.Alive, newCell.Status);
+        }
 
         [TestMethod()]
         public void 规则测试_活细胞周围4个活细胞_则死()
@@ -68,6 +113,29 @@ namespace ConwaysGame.Components.Tests
                 TopLeft = Cell.CreateDead(),
                 Top = Cell.CreateDead(),
                 TopRight = Cell.CreateDead(),
+                Left = Cell.CreateAlive(),
+                Center = Cell.CreateAlive(),
+                Right = Cell.CreateAlive(),
+                BottomLeft = Cell.CreateAlive(),
+                Bottom = Cell.CreateAlive(),
+                BottomRight = Cell.CreateDead()
+            };
+            //When
+            Cell newCell = Rule.Evolution(cellGroup);
+
+            //Then
+            Assert.AreEqual(CellStatus.Dead, newCell.Status);
+        }
+
+        [TestMethod()]
+        public void 规则测试_活细胞周围5个活细胞_则死()
+        {
+            //Given
+            CellGroup cellGroup = new CellGroup()
+            {
+                TopLeft = Cell.CreateDead(),
+                Top = Cell.CreateDead(),
+                TopRight = Cell.CreateAlive(),
                 Left = Cell.CreateAlive(),
                 Center = Cell.CreateAlive(),
                 Right = Cell.CreateAlive(),
@@ -128,7 +196,7 @@ namespace ConwaysGame.Components.Tests
         }
 
         [TestMethod()]
-        public void 规则测试_死细胞周围3个活细胞_则死()
+        public void 规则测试_死细胞周围3个活细胞_则活()
         {
             //Given
             CellGroup cellGroup = new CellGroup()
@@ -142,6 +210,28 @@ namespace ConwaysGame.Components.Tests
                 BottomLeft = Cell.CreateAlive(),
                 Bottom = Cell.CreateAlive(),
                 BottomRight = Cell.CreateDead()
+            };
+            //When
+            Cell newCell = Rule.Evolution(cellGroup);
+            //Then
+            Assert.AreEqual(CellStatus.Alive, newCell.Status);
+        }
+
+        [TestMethod()]
+        public void 规则测试_死细胞周围4个活细胞_则死()
+        {
+            //Given
+            CellGroup cellGroup = new CellGroup()
+            {
+                TopLeft = Cell.CreateDead(),
+                Top = Cell.CreateAlive(),
+                TopRight = Cell.CreateDead(),
+                Left = Cell.CreateDead(),
+                Center = Cell.CreateDead(),
+                Right = Cell.CreateDead(),
+                BottomLeft = Cell.CreateAlive(),
+                Bottom = Cell.CreateAlive(),
+                BottomRight = Cell.CreateAlive()
             };
             //When
             Cell newCell = Rule.Evolution(cellGroup);

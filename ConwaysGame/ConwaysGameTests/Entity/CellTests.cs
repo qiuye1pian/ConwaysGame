@@ -25,7 +25,6 @@ namespace ConwaysGame.Components.Tests
         {
             Cell randomCell = Cell.RandomlyGenerate();
             Assert.IsNotNull(randomCell);
-
         }
 
         

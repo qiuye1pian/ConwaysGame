@@ -23,6 +23,5 @@ namespace ConwaysGame.Components.Tests
             Assert.IsInstanceOfType(newWorld.GetCell(9, 9), typeof(Cell));
         }
 
-        
     }
 }

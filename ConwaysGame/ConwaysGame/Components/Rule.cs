@@ -25,35 +25,26 @@ namespace ConwaysGame.Components
 
         private static Cell DealDeadCell(CellGroup cellGroup)
         {
-            if (cellGroup.AroundAliveCount() == 2)
-            {
-                return Cell.CreateDead();
-            }
-
             if (cellGroup.AroundAliveCount() == 3)
-            {
-                return Cell.CreateDead();
-            }
-            return null;
-        }
-
-        private static Cell DealAliveCell(CellGroup cellGroup)
-        {
-            if (cellGroup.AroundAliveCount() == 4)
-            {
-                return Cell.CreateDead();
-            }
-
-            if (cellGroup.AroundAliveCount() == 2)
             {
                 return Cell.CreateAlive();
             }
 
-            if (cellGroup.AroundAliveCount() == 1)
+            return Cell.CreateDead();
+        }
+
+        private static Cell DealAliveCell(CellGroup cellGroup)
+        {
+            if (cellGroup.AroundAliveCount() >= 4)
             {
                 return Cell.CreateDead();
             }
-            return null;
+            if (cellGroup.AroundAliveCount() <= 1)
+            {
+                return Cell.CreateDead();
+            }
+ 
+            return Cell.CreateAlive();
         }
     }
 }
