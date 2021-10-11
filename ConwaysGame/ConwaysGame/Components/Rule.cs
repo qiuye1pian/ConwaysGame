@@ -16,9 +16,7 @@ namespace ConwaysGame.Components
 
         public static Cell Generate(CellGroup cellGroup)
         {
-            Cell currentCell = cellGroup.Center;
-
-            switch (currentCell.Status)
+            switch (cellGroup.Center.Status)
             {
                 case CellStatus.Alive:
                     return DealAliveCell(cellGroup);
