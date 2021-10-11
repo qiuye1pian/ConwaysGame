@@ -1,4 +1,6 @@
-﻿namespace ConwaysGame.Entity
+﻿using ConwaysGame.Components;
+
+namespace ConwaysGame.Entity
 {
     public class World
     {
@@ -10,14 +12,7 @@
         {
             this.width = width;
             this.height = height;
-            cells = new Cell[width, height];
-            for (int x = 0; x < width; x++)
-            {
-                for (int y = 0; y < height; y++)
-                {
-                    cells[x, y] = Cell.RandomlyGenerate();
-                }
-            }
+            cells = CellsFrameCreator.Create(width, height);
         }
 
         public int Width { get => width; }
@@ -30,7 +25,14 @@
 
         public void Evolution()
         {
-
+            Cell[,] newFrame = new Cell[width, height];
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    //newFrame[x, y] = Rule.Generate(); 
+                }
+            }
         }
     }
 }

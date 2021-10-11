@@ -56,6 +56,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Components\CellGroupPickerTests.cs" />
     <Compile Include="Components\RuleTests.cs" />
     <Compile Include="Entity\WorldTests.cs" />
     <Compile Include="Entity\CellTests.cs" />
