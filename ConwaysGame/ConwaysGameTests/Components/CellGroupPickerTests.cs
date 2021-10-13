@@ -15,7 +15,7 @@ namespace ConwaysGame.Components.Tests
         [TestMethod()]
         public void 二乘二的世界取第一个细胞的周围()
         {
-            Cell[,] cellsFrame = CellsFrameCreator.Create(2, 2);
+            Cell[,] cellsFrame = CellsFrameCreator.CreateRandomWorld(2, 2);
             CellGroup cellGroup = CellGroupPicker.PickCellGroup(cellsFrame, 0, 0);
 
             Assert.IsNull(cellGroup.TopLeft);
@@ -33,7 +33,7 @@ namespace ConwaysGame.Components.Tests
         [TestMethod()]
         public void 二乘二的世界取第二行的第一个细胞的周围()
         {
-            Cell[,] cellsFrame = CellsFrameCreator.Create(2, 2);
+            Cell[,] cellsFrame = CellsFrameCreator.CreateRandomWorld(2, 2);
             CellGroup cellGroup = CellGroupPicker.PickCellGroup(cellsFrame, 0, 1);
 
             Assert.IsNull(cellGroup.TopLeft);
@@ -51,7 +51,7 @@ namespace ConwaysGame.Components.Tests
         [TestMethod()]
         public void 二乘二的世界取第二行的第二个细胞的周围()
         {
-            Cell[,] cellsFrame = CellsFrameCreator.Create(2, 2);
+            Cell[,] cellsFrame = CellsFrameCreator.CreateRandomWorld(2, 2);
             CellGroup cellGroup = CellGroupPicker.PickCellGroup(cellsFrame, 1, 1);
 
             Assert.IsNotNull(cellGroup.TopLeft);

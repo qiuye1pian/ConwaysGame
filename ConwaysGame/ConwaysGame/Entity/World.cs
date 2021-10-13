@@ -6,13 +6,13 @@ namespace ConwaysGame.Entity
     {
         private readonly int width;
         private readonly int height;
-        private readonly Cell[,] cells;
+        private Cell[,] cells;
 
         public World(int width, int height)
         {
             this.width = width;
             this.height = height;
-            cells = CellsFrameCreator.Create(width, height);
+            cells = CellsFrameCreator.CreateRandomWorld(width, height);
         }
 
         public int Width { get => width; }
@@ -30,9 +30,10 @@ namespace ConwaysGame.Entity
             {
                 for (int y = 0; y < height; y++)
                 {
-                    //newFrame[x, y] = Rule.Generate(); 
+                    newFrame[x, y] = Rule.Generate(CellGroupPicker.PickCellGroup(cells, x, y));
                 }
             }
+            this.cells = newFrame;
         }
     }
 }

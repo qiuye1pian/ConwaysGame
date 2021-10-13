@@ -29,13 +29,22 @@ namespace ConwaysGame
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(66, 66);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(999, 798);
+            this.panel1.TabIndex = 0;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1153, 930);
+            this.Controls.Add(this.panel1);
             this.Name = "FormMain";
             this.Text = "Conway\'s Game";
             this.ResumeLayout(false);
@@ -43,6 +52,8 @@ namespace ConwaysGame
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -4,7 +4,7 @@ namespace ConwaysGame.Components
 {
     public class CellsFrameCreator
     {
-        public static Cell[,] Create(int width, int height)
+        public static Cell[,] CreateRandomWorld(int width, int height)
         {
             Cell[,] cells = new Cell[width, height];
             for (int x = 0; x < width; x++)
