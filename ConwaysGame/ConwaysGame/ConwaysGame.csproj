@@ -46,13 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\CellGroup.cs" />
-    <Compile Include="Components\CellGroupPicker.cs" />
-    <Compile Include="Components\CellsFrameCreator.cs" />
-    <Compile Include="Components\Rule.cs" />
-    <Compile Include="Entity\Cell.cs" />
-    <Compile Include="Components\CellStatus.cs" />
-    <Compile Include="Entity\World.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +78,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{0d61423c-eafd-4bee-a94c-04d3ab2bb1d1}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

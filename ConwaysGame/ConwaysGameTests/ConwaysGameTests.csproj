@@ -66,12 +66,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConwaysGame\ConwaysGame.csproj">
-      <Project>{2477A554-3599-4BEF-B6EC-C23D2CE3FC3C}</Project>
-      <Name>ConwaysGame</Name>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{0d61423c-eafd-4bee-a94c-04d3ab2bb1d1}</Project>
+      <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
